@@ -18,6 +18,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ["Playfair Display", "serif"],
+        sans: ["Inter", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+        work: ["Work Sans", "sans-serif"],
+      },
+      letterSpacing: {
+        "widest-xl": "0.25em",
+        "widest-2xl": "0.3em",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -31,6 +41,22 @@ export default {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        elegant: {
+          gold: "#D4AF37",
+          "deep-blue": "#1B263B",
+          cream: "#FDF8F3",
+          charcoal: "#2C2C2C",
+          sage: "#9CAF88",
+          "warm-gray": "#F5F3F0",
+          burgundy: "#722F37",
+        },
+        author: {
+          primary: "#1B263B",
+          accent: "#D4AF37",
+          "text-light": "#6B7280",
+          "bg-light": "#FEFEFE",
+          "bg-section": "#F8F9FA",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
