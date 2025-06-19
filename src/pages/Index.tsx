@@ -9,26 +9,26 @@ import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 const Index = () => {
   const featuredWorks = [
     {
-      title: "The Second Marriage of Kunju Namboodiri",
+      title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: "/The Second Marriage of Kunju Namboodiri.svg",
-      year: "2023",
+      image: "/Classic Malayalam Stories.jpg",
+      year: "2025",
       category: "Translation",
     },
     {
-      title: "The Story of a Timepiece",
+      title: "The Story of the Timepiece",
       description:
         "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
-      image: "/placeholder.svg",
-      year: "2022",
+      image: "/The Story of the Timepiece.jpg",
+      year: "2019",
       category: "Translation",
     },
     {
-      title: "Echoes of Malayalam Poetry",
+      title: Gandhi Alive",
       description:
-        "A collection of contemporary Malayalam poetry rendered into English while preserving the musical quality of the original verse.",
-      image: "/placeholder.svg",
+        "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
+      image: "/Gandhi Alive.jpg",
       year: "2023",
       category: "Poetry Translation",
     },
