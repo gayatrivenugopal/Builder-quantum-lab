@@ -50,6 +50,9 @@ export default {
           sage: "#9CAF88",
           "warm-gray": "#F5F3F0",
           burgundy: "#722F37",
+          "rich-gold": "#B8860B",
+          "soft-cream": "#FBF7F0",
+          "deep-charcoal": "#1A1A1A",
         },
         author: {
           primary: "#1B263B",
