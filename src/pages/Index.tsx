@@ -4,7 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
+import {
+  BookOpen,
+  Award,
+  Quote,
+  ArrowRight,
+  Star,
+  Feather,
+} from "lucide-react";
 
 const Index = () => {
   const featuredWorks = [
@@ -362,51 +369,72 @@ const Index = () => {
       </section>
 
       {/* Recent Press Coverage */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-author-primary mb-6 uppercase tracking-wider">
-              In the Press
+      <section className="py-32 bg-gradient-to-b from-white via-elegant-cream/20 to-white relative">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJjaXJjbGVzIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIyIiBmaWxsPSIjMUIyNjNCIiBvcGFjaXR5PSIwLjA1Ii8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjY2lyY2xlcykiLz4KPC9zdmc+')] opacity-40" />
+
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 bg-author-primary/5 border border-author-primary/20 rounded-full px-6 py-2 mb-6">
+              <Feather className="h-4 w-4 text-author-primary" />
+              <span className="text-sm font-raleway uppercase tracking-[0.2em] text-author-primary font-medium">
+                Media Coverage
+              </span>
+            </div>
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-author-primary mb-8 tracking-tight">
+              In the <span className="text-author-accent">Press</span>
             </h2>
-            <p className="text-xl text-author-text-light max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-author-text-light max-w-3xl mx-auto leading-relaxed">
               Recent articles and features highlighting literary achievements
+              and cultural contributions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {recentArticles.map((article, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-md hover:shadow-lg transition-shadow"
+                className="group relative border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white/80 backdrop-blur-sm overflow-hidden"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    <BookOpen className="h-5 w-5 text-author-accent" />
-                    <span className="text-sm font-raleway font-medium text-author-accent uppercase tracking-wider">
+                {/* Decorative top border */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-author-accent to-elegant-gold" />
+
+                <CardContent className="p-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-author-accent/10 rounded-full">
+                      <BookOpen className="h-5 w-5 text-author-accent" />
+                    </div>
+                    <span className="text-sm font-raleway font-bold text-author-accent uppercase tracking-[0.15em]">
                       {article.publication}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-serif font-bold text-author-primary mb-3 leading-tight">
+                  <h3 className="text-2xl font-serif font-bold text-author-primary mb-4 leading-tight group-hover:text-author-accent transition-colors duration-300">
                     {article.title}
                   </h3>
 
-                  <p className="text-author-text-light mb-4 leading-relaxed">
+                  <p className="text-author-text-light mb-6 leading-relaxed text-lg">
                     {article.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-author-text-light">
-                      {article.date}
-                    </span>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-author-accent rounded-full" />
+                      <span className="text-sm text-author-text-light font-medium">
+                        {article.date}
+                      </span>
+                    </div>
                     <Button
                       asChild
                       variant="ghost"
                       size="sm"
-                      className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
+                      className="group/btn text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0 font-medium"
                     >
                       <Link to="/articles">
-                        Read Article <ArrowRight className="ml-2 h-4 w-4" />
+                        <span>Read Article</span>
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                       </Link>
                     </Button>
                   </div>
@@ -415,40 +443,64 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-author-primary text-author-primary hover:bg-author-primary hover:text-white font-raleway uppercase tracking-wider"
+              className="group relative overflow-hidden border-2 border-author-primary/30 text-author-primary hover:text-white px-10 py-4 text-lg font-raleway uppercase tracking-[0.15em] bg-white/50 backdrop-blur-sm hover:border-author-accent transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <Link to="/articles">View All Articles</Link>
+              <Link to="/articles">
+                <span className="relative z-10">View All Articles</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-author-primary to-author-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-author-primary text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            Let's Connect
+      <section className="py-32 bg-gradient-to-br from-author-primary via-elegant-charcoal to-author-primary text-white relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZGlhbW9uZCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDYwIDEwIEwgMTEwIDYwIEwgNjAgMTEwIEwgMTAgNjAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZGlhbW9uZCkiLz4KPC9zdmc+')] opacity-20" />
+
+        {/* Floating decorative elements */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-br from-author-accent/20 to-elegant-gold/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-elegant-gold/20 to-author-accent/30 rounded-full blur-2xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-white/5 to-author-accent/10 rounded-full blur-xl animate-pulse delay-500" />
+
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <div className="mb-8">
+            <div className="inline-flex items-center space-x-2 bg-white/10 border border-author-accent/30 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
+              <Feather className="h-5 w-5 text-author-accent" />
+              <span className="text-sm font-raleway uppercase tracking-[0.2em] text-author-accent font-medium">
+                Connect & Collaborate
+              </span>
+            </div>
+          </div>
+
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 tracking-tight">
+            Let's <span className="text-author-accent">Connect</span>
           </h2>
 
-          <p className="text-xl mb-8 text-gray-300 leading-relaxed">
+          <p className="text-xl md:text-2xl mb-12 text-gray-300 leading-relaxed max-w-4xl mx-auto">
             Whether you're a publisher, fellow author, or reader interested in
-            literary translation, I'd love to hear from you.
+            literary translation, I'd love to hear from you and explore
+            opportunities for collaboration.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button
               asChild
               size="lg"
-              variant="secondary"
-              className="bg-author-accent hover:bg-elegant-gold text-author-primary px-8 py-3 text-lg font-raleway uppercase tracking-wider"
+              className="group relative overflow-hidden bg-gradient-to-r from-author-accent to-elegant-gold hover:from-elegant-gold hover:to-author-accent text-author-primary px-12 py-4 text-lg font-raleway uppercase tracking-[0.15em] shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
             >
               <Link to="/contact">
-                Send Email <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center font-bold">
+                  Send Email
+                  <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white to-elegant-cream transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left opacity-90" />
               </Link>
             </Button>
 
@@ -456,10 +508,31 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-author-primary px-8 py-3 text-lg font-raleway uppercase tracking-wider"
+              className="group relative overflow-hidden border-2 border-white/40 text-white hover:text-author-primary px-12 py-4 text-lg font-raleway uppercase tracking-[0.15em] bg-white/10 backdrop-blur-sm hover:border-white transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <Link to="/about">Learn More</Link>
+              <Link to="/about">
+                <span className="relative z-10 font-bold">Learn More</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white to-elegant-cream transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </Link>
             </Button>
+          </div>
+
+          {/* Social proof */}
+          <div className="mt-16 pt-12 border-t border-white/20">
+            <p className="text-gray-400 text-sm font-raleway uppercase tracking-[0.15em] mb-4">
+              Trusted by Publishers Worldwide
+            </p>
+            <div className="flex justify-center items-center space-x-8 opacity-60">
+              <div className="text-white/60 font-serif text-lg">
+                Penguin Random House
+              </div>
+              <div className="w-1 h-1 bg-white/40 rounded-full" />
+              <div className="text-white/60 font-serif text-lg">
+                HarperCollins
+              </div>
+              <div className="w-1 h-1 bg-white/40 rounded-full" />
+              <div className="text-white/60 font-serif text-lg">Bloomsbury</div>
+            </div>
           </div>
         </div>
       </section>
