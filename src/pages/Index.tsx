@@ -82,32 +82,62 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-author-bg-light via-elegant-warm-gray to-elegant-cream min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz4KPC9zdmc+')] opacity-30"></div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background with sophisticated gradient and texture */}
+        <div className="absolute inset-0 bg-gradient-to-br from-elegant-cream via-author-bg-light to-elegant-warm-gray">
+          <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iZ3JhZGllbnQtZG90cyIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIxLjUiIGZpbGw9IiNENEFGMzciIG9wYWNpdHk9IjAuMTUiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkaWVudC1kb3RzKSIvPgo8L3N2Zz4=')] opacity-40" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-author-primary mb-6 leading-tight">
-              Bridging Cultures
-              <span className="block text-author-accent">
+        {/* Floating decorative elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-author-accent/10 to-elegant-gold/20 rounded-full blur-xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-elegant-gold/10 to-author-accent/20 rounded-full blur-2xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-author-primary/5 to-author-accent/10 rounded-full blur-xl animate-pulse delay-500" />
+
+        <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
+          <div className="max-w-5xl mx-auto">
+            {/* Elegant badge */}
+            <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-elegant-gold/30 rounded-full px-6 py-3 mb-8 shadow-lg">
+              <Feather className="h-4 w-4 text-author-accent" />
+              <span className="text-sm font-raleway uppercase tracking-[0.2em] text-author-primary font-medium">
+                Literary Translator
+              </span>
+            </div>
+
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-8 leading-none">
+              <span className="block bg-gradient-to-br from-author-primary via-author-primary to-author-accent bg-clip-text text-transparent">
+                Bridging
+              </span>
+              <span className="block bg-gradient-to-br from-author-accent via-elegant-gold to-author-accent bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-500">
+                Cultures
+              </span>
+              <span className="block text-author-primary/70 text-4xl md:text-6xl lg:text-7xl mt-4 font-light">
                 Through Translation
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-author-text-light mb-8 leading-relaxed max-w-3xl mx-auto">
-              Acclaimed translator and author bringing the richness of Malayalam
-              literature to global audiences with sensitivity and artistic
-              excellence.
-            </p>
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="text-xl md:text-2xl lg:text-3xl text-author-text-light leading-relaxed font-light">
+                Acclaimed translator and author bringing the richness of{" "}
+                <span className="text-author-accent font-medium">
+                  Malayalam literature
+                </span>{" "}
+                to global audiences with sensitivity and artistic excellence.
+              </p>
+            </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-author-primary hover:bg-author-accent text-white px-8 py-3 text-lg font-raleway uppercase tracking-wider"
+                className="group relative overflow-hidden bg-gradient-to-r from-author-primary to-author-accent hover:from-author-accent hover:to-elegant-gold text-white px-10 py-4 text-lg font-raleway uppercase tracking-[0.15em] shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
                 <Link to="/works">
-                  Explore Works <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center">
+                    Explore Works
+                    <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-elegant-gold to-author-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                 </Link>
               </Button>
 
@@ -115,10 +145,20 @@ const Index = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-author-primary text-author-primary hover:bg-author-primary hover:text-white px-8 py-3 text-lg font-raleway uppercase tracking-wider"
+                className="group relative overflow-hidden border-2 border-author-primary/30 text-author-primary hover:text-white px-10 py-4 text-lg font-raleway uppercase tracking-[0.15em] bg-white/50 backdrop-blur-sm hover:border-author-accent transition-all duration-300 transform hover:scale-105"
               >
-                <Link to="/contact">Send Email</Link>
+                <Link to="/contact">
+                  <span className="relative z-10">Send Email</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-author-primary to-author-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                </Link>
               </Button>
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <div className="w-6 h-10 border-2 border-author-primary/30 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-author-primary/40 rounded-full mt-2 animate-pulse" />
+              </div>
             </div>
           </div>
         </div>
