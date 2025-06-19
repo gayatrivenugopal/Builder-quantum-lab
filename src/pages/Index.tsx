@@ -12,7 +12,7 @@ const Index = () => {
       title: "The Second Marriage of Kunju Namboodiri",
       description:
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: "/placeholder.svg",
+      image: "/The Second Marriage of Kunju Namboodiri.svg",
       year: "2023",
       category: "Translation",
     },
@@ -90,12 +90,12 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-author-primary mb-6 leading-tight">
               Bridging Cultures
               <span className="block text-author-accent">
-                Through Translation
+                through Translation
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-author-text-light mb-8 leading-relaxed max-w-3xl mx-auto">
-              Acclaimed translator and author bringing the richness of Malayalam
+              Renowned translator and writer bringing the richness of Malayalam
               literature to global audiences with sensitivity and artistic
               excellence.
             </p>
