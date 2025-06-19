@@ -165,125 +165,197 @@ const Index = () => {
       </section>
 
       {/* Featured Works Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-author-primary mb-6 uppercase tracking-wider">
-              Featured Works
+      <section className="py-32 bg-gradient-to-b from-white via-elegant-cream/30 to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0ic3F1YXJlcyIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNIDIwIDAgTCAwIDAgMCAyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4wOCIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3NxdWFyZXMpIi8+Cjwvc3ZnPg==')] opacity-50" />
+
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 bg-author-accent/10 border border-author-accent/20 rounded-full px-6 py-2 mb-6">
+              <BookOpen className="h-4 w-4 text-author-accent" />
+              <span className="text-sm font-raleway uppercase tracking-[0.2em] text-author-accent font-medium">
+                Literary Portfolio
+              </span>
+            </div>
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-author-primary mb-8 tracking-tight">
+              Featured <span className="text-author-accent">Works</span>
             </h2>
-            <p className="text-xl text-author-text-light max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-author-text-light max-w-3xl mx-auto leading-relaxed">
               Literary translations that preserve the essence while opening new
-              worlds
+              worlds to readers across cultures
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {featuredWorks.map((work, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md"
+                className="group relative overflow-hidden border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 bg-white/70 backdrop-blur-sm"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="aspect-[3/4] bg-gradient-to-br from-elegant-cream to-elegant-warm-gray rounded-t-lg overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge
-                      variant="secondary"
-                      className="bg-author-accent/10 text-author-accent border-author-accent/20"
-                    >
-                      {work.category}
-                    </Badge>
-                    <span className="text-sm text-author-text-light">
-                      {work.year}
-                    </span>
+                {/* Image container with overlay */}
+                <div className="aspect-[3/4] relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-elegant-cream via-elegant-warm-gray to-author-accent/20">
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
 
-                  <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
+                  {/* Elegant overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-author-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Floating badge */}
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-white/90 text-author-primary border-0 font-raleway uppercase tracking-wider text-xs shadow-lg">
+                      {work.category}
+                    </Badge>
+                  </div>
+
+                  {/* Year badge */}
+                  <div className="absolute top-4 right-4">
+                    <div className="bg-author-accent text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                      {work.year}
+                    </div>
+                  </div>
+                </div>
+
+                <CardContent className="p-8 relative">
+                  <h3 className="text-2xl font-serif font-bold text-author-primary mb-4 leading-tight group-hover:text-author-accent transition-colors duration-300">
                     {work.title}
                   </h3>
 
-                  <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-author-text-light leading-relaxed mb-6 line-clamp-4">
                     {work.description}
                   </p>
 
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
-                  >
-                    <Link to="/works">
-                      Read More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <div className="flex items-center justify-between">
+                    <Button
+                      asChild
+                      variant="ghost"
+                      className="group/btn text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0 font-medium"
+                    >
+                      <Link to="/works">
+                        <span>Read More</span>
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </Button>
+
+                    <div className="flex items-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 text-author-accent fill-current"
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-author-primary text-author-primary hover:bg-author-primary hover:text-white font-raleway uppercase tracking-wider"
+              className="group relative overflow-hidden border-2 border-author-primary/30 text-author-primary hover:text-white px-10 py-4 text-lg font-raleway uppercase tracking-[0.15em] bg-white/50 backdrop-blur-sm hover:border-author-accent transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <Link to="/works">View All Works</Link>
+              <Link to="/works">
+                <span className="relative z-10">View All Works</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-author-primary to-author-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-author-bg-section">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-author-primary mb-6 uppercase tracking-wider">
-              What Others Say
+      <section className="py-32 bg-gradient-to-br from-author-primary via-author-primary to-elegant-charcoal text-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iaGV4YWdvbiIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxNTAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cG9seWdvbiBwb2ludHM9Ijc1LDEwIDEyNSwzNy41IDEyNSwxMTIuNSA3NSwxNDAgMjUsMTEyLjUgMjUsMzcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvbikiLz4KPC9zdmc+')] opacity-30" />
+
+        {/* Floating elements */}
+        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-author-accent/20 to-elegant-gold/30 rounded-full blur-2xl animate-pulse" />
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-br from-elegant-gold/20 to-author-accent/30 rounded-full blur-3xl animate-pulse delay-1000" />
+
+        <div className="max-w-7xl mx-auto px-6 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center space-x-2 bg-white/10 border border-author-accent/30 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
+              <Award className="h-4 w-4 text-author-accent" />
+              <span className="text-sm font-raleway uppercase tracking-[0.2em] text-author-accent font-medium">
+                Critical Acclaim
+              </span>
+            </div>
+
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-8 tracking-tight">
+              What <span className="text-author-accent">Others Say</span>
             </h2>
-            <p className="text-xl text-author-text-light max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Recognition from literary critics, publishers, and fellow authors
+              who value authentic cultural translation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-md bg-white">
-                <CardContent className="p-8">
-                  <Quote className="h-10 w-10 text-author-accent mb-6" />
+              <Card
+                key={index}
+                className="group relative border-0 shadow-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-500 transform hover:scale-105 hover:shadow-3xl"
+                style={{ animationDelay: `${index * 300}ms` }}
+              >
+                <CardContent className="p-10 relative">
+                  {/* Large decorative quote */}
+                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-author-accent to-elegant-gold rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    <Quote className="h-8 w-8 text-white" />
+                  </div>
 
-                  <p className="text-lg text-author-primary leading-relaxed mb-6 font-serif italic">
-                    "{testimonial.quote}"
-                  </p>
+                  <div className="pt-8">
+                    <p className="text-xl text-white leading-relaxed mb-8 font-serif italic font-light">
+                      "{testimonial.quote}"
+                    </p>
 
-                  <div className="border-t pt-6">
-                    <p className="font-raleway font-semibold text-author-primary mb-1">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-author-text-light">
-                      {testimonial.position}
-                    </p>
-                    <p className="text-sm text-author-accent font-medium">
-                      {testimonial.institution}
-                    </p>
+                    {/* Rating stars */}
+                    <div className="flex items-center space-x-1 mb-6">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-author-accent fill-current"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="border-t border-white/20 pt-6">
+                      <p className="font-raleway font-bold text-white mb-2 text-lg">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-gray-300 mb-1 font-medium">
+                        {testimonial.position}
+                      </p>
+                      <p className="text-author-accent font-raleway font-medium uppercase tracking-wider text-sm">
+                        {testimonial.institution}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-author-primary text-author-primary hover:bg-author-primary hover:text-white font-raleway uppercase tracking-wider"
+              className="group relative overflow-hidden border-2 border-white/30 text-white hover:text-author-primary px-10 py-4 text-lg font-raleway uppercase tracking-[0.15em] bg-white/10 backdrop-blur-sm hover:border-white transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              <Link to="/reviews">Read All Reviews</Link>
+              <Link to="/reviews">
+                <span className="relative z-10">Read All Reviews</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white to-elegant-cream transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </Link>
             </Button>
           </div>
         </div>
