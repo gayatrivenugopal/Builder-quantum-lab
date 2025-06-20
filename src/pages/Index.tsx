@@ -25,7 +25,7 @@ const Index = () => {
       category: "Translation",
     },
     {
-      title: Gandhi Alive",
+      title: "Gandhi Alive",
       description:
         "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
       image: "gandhi-alive.jpg",
