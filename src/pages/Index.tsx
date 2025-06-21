@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import classicStories from './images/classic-malayalam-stories.jpg';
 import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
 const Index = () => {
@@ -12,7 +13,7 @@ const Index = () => {
       title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: "/images/classic-malayalam-stories.jpg",
+      image: {classicStories},
       year: "2025",
       category: "Translation",
     },
