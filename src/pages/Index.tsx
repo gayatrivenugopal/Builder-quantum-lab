@@ -13,7 +13,7 @@ const Index = () => {
       title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: {classicStories},
+      image: classicStories,
       year: "2025",
       category: "Translation",
     },
