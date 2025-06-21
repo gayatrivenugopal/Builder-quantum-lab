@@ -126,6 +126,15 @@ const Index = () => {
       </section>
 
       {/* Featured Works Section */}
+	  {featuredWorks.map((work, index) => {
+  console.log("work.image", work.image);  // <-- Add this
+
+  return (
+    <Card key={index}>
+      {/* ... */}
+    </Card>
+  );
+})}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
