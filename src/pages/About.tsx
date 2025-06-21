@@ -31,10 +31,11 @@ const About = () => {
               About Page Coming Soon
             </h2>
             <p className="text-lg text-author-text-light mb-8 leading-relaxed">
-              This page will feature Venugopal Menon's biography, literary
-              journey, awards and recognition, translation philosophy, and
-              personal insights into the art of bringing Malayalam literature to
-              English readers.
+              Venugopal Menon retired from Larsen & Toubro Limited where he worked in sales, marketing,
+			   and finally training, wherein his writing and workshopping skills were widely
+			    appreciated. He turned his attention to literary pursuits in a 
+				preliminary manner, beginning with proofreading for Paragon Prepress Journal,
+				 Delhi.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
