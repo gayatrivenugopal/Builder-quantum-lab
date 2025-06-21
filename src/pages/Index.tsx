@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import classicStories from './images/classic-malayalam-stories.jpg';
 import timepiece from './images/the-story-of-the-timepiece.jpg';
 import gandhiAlive from './images/gandhi-alive.jpg';
+import profile from './images/venugopal-menon.jpg';
 
 import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
