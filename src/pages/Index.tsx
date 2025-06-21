@@ -215,7 +215,7 @@ const Index = () => {
           </div>
 		  <div className="mt-6 flex justify-center">
 		  <img
-			src="/images/venugopal-menon.jpg"
+			src={`${import.meta.env.BASE_URL}images/venugopal-menon.jpg`}
 			alt="Venugopal Menon"
 			className="w-40 h-40 rounded-full shadow-md object-cover border-4 border-author-accent"
 		  />
