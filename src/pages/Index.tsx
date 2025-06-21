@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import classicStories from './images/classic-malayalam-stories.jpg';
+import timepiece from './images/the-story-of-the-timepiece.jpg';
+import gandhiAlive from './images/gandhi-alive.jpg';
+
 import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
 const Index = () => {
@@ -21,7 +24,7 @@ const Index = () => {
       title: "The Story of the Timepiece",
       description:
         "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
-      image: "/images/the-story-of-the-timepiece.jpg",
+      image: timepiece,
       year: "2019",
       category: "Translation",
     },
@@ -29,9 +32,9 @@ const Index = () => {
       title: "Gandhi Alive",
       description:
         "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
-      image: "/images/gandhi-alive.jpg",
+      image: gandhiAlive,
       year: "2023",
-      category: "Poetry Translation",
+      category: "Translation",
     },
   ];
 
@@ -126,15 +129,6 @@ const Index = () => {
       </section>
 
       {/* Featured Works Section */}
-	  {featuredWorks.map((work, index) => {
-  console.log("work.image", work.image);  // <-- Add this
-
-  return (
-    <Card key={index}>
-      {/* ... */}
-    </Card>
-  );
-})}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
