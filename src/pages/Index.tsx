@@ -57,7 +57,7 @@ const Index = () => {
 		in specific regional milieus.",
       author: "Vineetha Mokkil",
       position: "Assistant Editor",
-      institution: "Outlook",
+      institution: "<a href='https://www.outlookindia.com/books/book-reviewthe-early-classics-series'>Outlook</a>",
     },
     {
       quote:
