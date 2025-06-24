@@ -48,7 +48,7 @@ const Index = () => {
 		clear, and accessible.",
       author: "Shevlin Sebastian",
       position: "Author & Journalist",
-      institution: "The New Indian Express",
+      institution: "<a href='https://www.newindianexpress.com/cities/kochi/2019/Jul/03/casting-a-timeless-spell-1998523.html'>The New Indian Express</a>",
     },
     {
 	  quote:
@@ -65,7 +65,7 @@ const Index = () => {
 		topmost in mind.",
       author: "Meenakshi Shivram",
       position: "Sahitya Akademi translation award winner",
-      institution: "The Hindu",
+      institution: "<a href='https://www.thehindu.com/books/early-classic-stories-series-mini-krishnan-translation-odia-kannada-malayalam/article69609734.ece'>The Hindu</a>",
     },
     {
       quote:
@@ -73,7 +73,7 @@ const Index = () => {
 		Classic Malayalam Stories is flavoursome as they come.",
       author: "Anuja Chandramouli",
       position: "Author",
-      institution: "The New Indian Express",
+      institution: "<a href='https://www.newindianexpress.com/lifestyle/books/2025/Jun/08/rare-regional-remarkable'>The New Indian Express</a>",
     },
   ];
 
