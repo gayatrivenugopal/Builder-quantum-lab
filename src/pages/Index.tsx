@@ -66,6 +66,15 @@ const Index = () => {
       position: "Author",
       institution: "The New Indian Express",
     },
+	{
+      quote:
+        "The moment you start reading a story, you have no \
+		option but to read till the end. The writing is simple, \
+		clear, and accessible.",
+      author: "Shevlin Sebastian",
+      position: "Author & Journalist",
+      institution: "The New Indian Express",
+    },
   ];
 
   const recentArticles = [
