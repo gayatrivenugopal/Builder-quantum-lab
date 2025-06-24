@@ -42,25 +42,31 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote:
-        "Venugopal Menon's translations are a masterclass in preserving the soul of the original while making it accessible to English readers.",
-      author: "Dr. Priya Nair",
-      position: "Professor of Comparative Literature",
-      institution: "University of Kerala",
+	  quote:
+		"The translator has taken care to preserve the \
+		original flavours of the stories that are rooted \
+		in specific regional milieus. Thanks to them, the \
+		collections seamlessly transport you to three different \
+		parts of India and to a different time.",
+      author: "Vineetha Mokkil",
+      position: "Assistant Editor",
+      institution: "Outlook",
     },
     {
       quote:
-        "His work bridges cultures with an elegance that speaks to the universality of human experience.",
-      author: "Rajesh Krishnan",
-      position: "Literary Critic",
-      institution: "The Hindu Literary Review",
+        "Venugopal Menon always keeps the non-Malayali reader \
+		topmost in mind.",
+      author: "Meenakshi Shivram",
+      position: "Sahitya Akademi translation award winner",
+      institution: "The Hindu",
     },
     {
       quote:
-        "A translator of exceptional skill who brings Malayalam literature to life for global audiences.",
-      author: "Sarah Williams",
-      position: "Senior Editor",
-      institution: "Penguin Random House India",
+        "The Second Marriage of Kunju Namboodiri and other \
+		Classic Malayalam Stories is flavoursome as they come.",
+      author: "Anuja Chandramouli",
+      position: "Author",
+      institution: "The New Indian Express",
     },
   ];
 
