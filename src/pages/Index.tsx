@@ -45,9 +45,7 @@ const Index = () => {
 	  quote:
 		"The translator has taken care to preserve the \
 		original flavours of the stories that are rooted \
-		in specific regional milieus. Thanks to them, the \
-		collections seamlessly transport you to three different \
-		parts of India and to a different time.",
+		in specific regional milieus.",
       author: "Vineetha Mokkil",
       position: "Assistant Editor",
       institution: "Outlook",
