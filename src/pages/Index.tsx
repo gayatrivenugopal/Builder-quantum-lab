@@ -41,6 +41,15 @@ const Index = () => {
   ];
 
   const testimonials = [
+	{
+      quote:
+        "The moment you start reading a story, you have no \
+		option but to read till the end. The writing is simple, \
+		clear, and accessible.",
+      author: "Shevlin Sebastian",
+      position: "Author & Journalist",
+      institution: "The New Indian Express",
+    },
     {
 	  quote:
 		"The translator has taken care to preserve the \
@@ -64,15 +73,6 @@ const Index = () => {
 		Classic Malayalam Stories is flavoursome as they come.",
       author: "Anuja Chandramouli",
       position: "Author",
-      institution: "The New Indian Express",
-    },
-	{
-      quote:
-        "The moment you start reading a story, you have no \
-		option but to read till the end. The writing is simple, \
-		clear, and accessible.",
-      author: "Shevlin Sebastian",
-      position: "Author & Journalist",
       institution: "The New Indian Express",
     },
   ];
