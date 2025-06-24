@@ -48,7 +48,8 @@ const Index = () => {
 		clear, and accessible.",
       author: "Shevlin Sebastian",
       position: "Author & Journalist",
-      institution: "<a href='https://www.newindianexpress.com/cities/kochi/2019/Jul/03/casting-a-timeless-spell-1998523.html'>The New Indian Express</a>",
+	  institutionUrl: "https://www.newindianexpress.com/cities/kochi/2019/Jul/03/casting-a-timeless-spell-1998523.html",
+      institution: "The New Indian Express",
     },
     {
 	  quote:
@@ -57,7 +58,8 @@ const Index = () => {
 		in specific regional milieus.",
       author: "Vineetha Mokkil",
       position: "Assistant Editor",
-      institution: "<a href='https://www.outlookindia.com/books/book-reviewthe-early-classics-series'>Outlook</a>",
+	  institutionUrl: "https://www.outlookindia.com/books/book-reviewthe-early-classics-series",
+      institution: "Outlook",
     },
     {
       quote:
@@ -65,7 +67,8 @@ const Index = () => {
 		topmost in mind.",
       author: "Meenakshi Shivram",
       position: "Sahitya Akademi translation award winner",
-      institution: "<a href='https://www.thehindu.com/books/early-classic-stories-series-mini-krishnan-translation-odia-kannada-malayalam/article69609734.ece'>The Hindu</a>",
+	  institutionUrl: "https://www.thehindu.com/books/early-classic-stories-series-mini-krishnan-translation-odia-kannada-malayalam/article69609734.ece",
+      institution: "The Hindu",
     },
     {
       quote:
@@ -73,7 +76,8 @@ const Index = () => {
 		Classic Malayalam Stories is flavoursome as they come.",
       author: "Anuja Chandramouli",
       position: "Author",
-      institution: "<a href='https://www.newindianexpress.com/lifestyle/books/2025/Jun/08/rare-regional-remarkable'>The New Indian Express</a>",
+	  institutionUrl: "https://www.newindianexpress.com/lifestyle/books/2025/Jun/08/rare-regional-remarkable",
+      institution: "The New Indian Express",
     },
   ];
 
@@ -254,7 +258,14 @@ const Index = () => {
                       {testimonial.position}
                     </p>
                     <p className="text-sm text-author-accent font-medium">
-                      {testimonial.institution}
+                       <a 
+						href={testimonial.institutionUrl} 
+						target="_blank" 
+						rel="noopener noreferrer"
+						className="hover:underline"
+					  >
+					  {testimonial.institution}
+					  </a>
                     </p>
                   </div>
                 </CardContent>
