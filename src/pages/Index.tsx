@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import classicStories from './images/classic-malayalam-stories.jpg';
@@ -198,15 +199,18 @@ const Index = () => {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="text-sm text-author-accent leading-snug">
-					  {Array.isArray(work.category) ? (
-						work.category.map((line, i) => (
-						  <div key={i}>{line}</div>
-						))
-					  ) : (
-						<div>{work.category}</div>
-					  )}
-					</div>
+                    <Badge
+					  variant="secondary"
+					  className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
+					>
+					  <div className="text-center">
+						{Array.isArray(work.category)
+						  ? work.category.map((line, i) => (
+							  <div key={i}>{line}</div>
+							))
+						  : work.category}
+					  </div>
+                    </Badge>
                     <span className="text-sm text-author-text-light">
                       {work.year}
                     </span>
