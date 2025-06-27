@@ -268,7 +268,7 @@ const Index = () => {
 			alt="Venugopal Menon"
 			className="w-40 h-40 rounded-full shadow-md object-cover border-4 border-author-accent"
 		  />
-		</div>
+		</div><br/><br/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
