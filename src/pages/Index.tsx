@@ -14,13 +14,12 @@ import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
 const Index = () => {
   const featuredWorks = [
-    ,
-    {
-      title: "The Story of the Timepiece",
+	{
+      title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
-        "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
-      image: timepiece,
-      year: "2019",
+        "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
+      image: classicStories,
+      year: "2025",
       category: "Translation",
     },
     {
@@ -32,11 +31,11 @@ const Index = () => {
       category: "Translation",
     },
 	{
-      title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
+      title: "The Story of the Timepiece",
       description:
-        "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: classicStories,
-      year: "2025",
+        "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
+      image: timepiece,
+      year: "2019",
       category: "Translation",
     }
   ];
