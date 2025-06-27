@@ -20,7 +20,8 @@ const Index = () => {
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
       image: classicStories,
       year: "2025",
-      category: "Harper Perennial India (An Imprint of HarperCollins India)",
+      category: "Harper Perennial India <br> \
+	  An Imprint of HarperCollins India",
     },
     {
       title: "Gandhi Alive",
