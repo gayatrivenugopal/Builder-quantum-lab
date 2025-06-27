@@ -79,6 +79,30 @@ const Index = () => {
 	  institutionUrl: "https://www.newindianexpress.com/lifestyle/books/2025/Jun/08/rare-regional-remarkable",
       institution: "The New Indian Express",
     },
+	{
+      quote:
+        "Venugopal Menon's translation of these classic \
+		Malayalam short stories (written between 1891 and 1924) \
+		captures the spirit and \
+		cadence of that bygone era so deftly that I felt \
+		transported—immersed in a time when the Indian \
+		freedom struggle was still finding its feet.",
+      author: "Vinod Joseph",
+      position: "Author, Reviewer and Lawyer",
+	  institutionUrl: "https://urlisolation.com/browser?clickId=99D81759-A323-480D-88AA-5BC3E748061B&traceToken=1751042529%3Bnewscorp_hosted%3Bhttps%3A%2Fwinnowed.blogspot.com%2F202&url=https%3A%2F%2Fwinnowed.blogspot.com%2F2025%2F06%2Fbook-review-second-marriage-of-kunju.html",
+      institution: "Winnowed",
+    },
+	{
+      quote:
+        "Menon deconstructs the stories, offers insight \
+		into their source, and, of course, proffers \
+		insights into the translation process that are \
+		sagacious enough to warrant a longer essay.",
+      author: "Mahika Dhar",
+      position: "Writer & Reviewer",
+	  institutionUrl: "https://urlisolation.com/browser?clickId=99D81759-A323-480D-88AA-5BC3E748061B&traceToken=1751042529%3Bnewscorp_hosted%3Bhttps%3A%2Fwinnowed.blogspot.com%2F202&url=https%3A%2F%2Fwinnowed.blogspot.com%2F2025%2F06%2Fbook-review-second-marriage-of-kunju.html",
+      institution: "Winnowed",
+    },
   ];
 
   const recentArticles = [
