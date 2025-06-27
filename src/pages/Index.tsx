@@ -262,7 +262,7 @@ const Index = () => {
               Recognition from literary critics and fellow authors
             </p>
           </div>
-		  <div className="mt-4 flex justify-center">
+		  <div className="mt-2 flex justify-center">
 		  <img
 			src={profile}
 			alt="Venugopal Menon"
