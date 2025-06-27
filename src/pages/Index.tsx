@@ -14,14 +14,7 @@ import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
 const Index = () => {
   const featuredWorks = [
-    {
-      title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
-      description:
-        "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
-      image: classicStories,
-      year: "2025",
-      category: "Translation",
-    },
+    ,
     {
       title: "The Story of the Timepiece",
       description:
@@ -38,18 +31,25 @@ const Index = () => {
       year: "2023",
       category: "Translation",
     },
+	{
+      title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
+      description:
+        "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
+      image: classicStories,
+      year: "2025",
+      category: "Translation",
+    }
   ];
 
   const testimonials = [
 	{
       quote:
-        "The moment you start reading a story, you have no \
-		option but to read till the end. The writing is simple, \
-		clear, and accessible.",
-      author: "Shevlin Sebastian",
-      position: "Author & Journalist",
-	  institutionUrl: "https://www.newindianexpress.com/cities/kochi/2019/Jul/03/casting-a-timeless-spell-1998523.html",
-      institution: "The New Indian Express",
+        "Venugopal Menon always keeps the non-Malayali reader \
+		topmost in mind.",
+      author: "Dr. Meenakshi Shivram",
+      position: "Translator & Sahitya Akademi Awardee",
+	  institutionUrl: "https://www.thehindu.com/books/early-classic-stories-series-mini-krishnan-translation-odia-kannada-malayalam/article69609734.ece",
+      institution: "The Hindu",
     },
     {
 	  quote:
@@ -57,18 +57,9 @@ const Index = () => {
 		original flavours of the stories that are rooted \
 		in specific regional milieus.",
       author: "Vineetha Mokkil",
-      position: "Assistant Editor",
+      position: "Author & Assistant Editor",
 	  institutionUrl: "https://www.outlookindia.com/books/book-reviewthe-early-classics-series",
       institution: "Outlook",
-    },
-    {
-      quote:
-        "Venugopal Menon always keeps the non-Malayali reader \
-		topmost in mind.",
-      author: "Meenakshi Shivram",
-      position: "Sahitya Akademi translation award winner",
-	  institutionUrl: "https://www.thehindu.com/books/early-classic-stories-series-mini-krishnan-translation-odia-kannada-malayalam/article69609734.ece",
-      institution: "The Hindu",
     },
     {
       quote:
@@ -88,7 +79,7 @@ const Index = () => {
 		transported—immersed in a time when the Indian \
 		freedom struggle was still finding its feet.",
       author: "Vinod Joseph",
-      position: "Author, Reviewer and Lawyer",
+      position: "Author & Lawyer",
 	  institutionUrl: "https://urlisolation.com/browser?clickId=99D81759-A323-480D-88AA-5BC3E748061B&traceToken=1751042529%3Bnewscorp_hosted%3Bhttps%3A%2Fwinnowed.blogspot.com%2F202&url=https%3A%2F%2Fwinnowed.blogspot.com%2F2025%2F06%2Fbook-review-second-marriage-of-kunju.html",
       institution: "Winnowed",
     },
@@ -99,10 +90,20 @@ const Index = () => {
 		insights into the translation process that are \
 		sagacious enough to warrant a longer essay.",
       author: "Mahika Dhar",
-      position: "Writer & Reviewer",
+      position: "Writer",
 	  institutionUrl: "https://urlisolation.com/browser?clickId=99D81759-A323-480D-88AA-5BC3E748061B&traceToken=1751042529%3Bnewscorp_hosted%3Bhttps%3A%2Fwinnowed.blogspot.com%2F202&url=https%3A%2F%2Fwinnowed.blogspot.com%2F2025%2F06%2Fbook-review-second-marriage-of-kunju.html",
-      institution: "Winnowed",
+      institution: "Scroll.in",
     },
+	{
+      quote:
+        "The moment you start reading a story, you have no \
+		option but to read till the end. The writing is simple, \
+		clear, and accessible.",
+      author: "Shevlin Sebastian",
+      position: "Author & Journalist",
+	  institutionUrl: "https://www.newindianexpress.com/cities/kochi/2019/Jul/03/casting-a-timeless-spell-1998523.html",
+      institution: "The New Indian Express",
+    }
   ];
 
   const recentArticles = [
