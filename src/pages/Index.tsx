@@ -211,7 +211,7 @@ const Index = () => {
 						  : work.category}
 					  </div>
                     </Badge>
-                    <span className="text-sm text-author-text-light text-right">
+                    <span className="text-sm text-author-text-light text-right font-bold">
                       {work.year}
                     </span>
                   </div>
