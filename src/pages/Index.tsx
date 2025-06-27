@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import classicStories from './images/classic-malayalam-stories.jpg';
@@ -20,8 +19,7 @@ const Index = () => {
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
       image: classicStories,
       year: "2025",
-      category: "Harper Perennial India \n \
-	  An Imprint of HarperCollins India",
+      category: ["Harper Perennial India", "An Imprint of HarperCollins India"],
     },
     {
       title: "Gandhi Alive",
@@ -200,12 +198,15 @@ const Index = () => {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <Badge
-                      variant="secondary"
-                      className="bg-author-accent/10 text-author-accent border-author-accent/20"
-                    >
-                      {work.category}
-                    </Badge>
+                    <div className="text-sm text-author-accent leading-snug">
+					  {Array.isArray(work.category) ? (
+						work.category.map((line, i) => (
+						  <div key={i}>{line}</div>
+						))
+					  ) : (
+						<div>{work.category}</div>
+					  )}
+					</div>
                     <span className="text-sm text-author-text-light">
                       {work.year}
                     </span>
