@@ -198,7 +198,7 @@ const Index = () => {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex justify-between items-center mb-3">
                     <Badge
 					  variant="secondary"
 					  className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
@@ -211,7 +211,7 @@ const Index = () => {
 						  : work.category}
 					  </div>
                     </Badge>
-                    <span className="text-sm text-author-text-light">
+                    <span className="text-sm text-author-text-light text-right">
                       {work.year}
                     </span>
                   </div>
