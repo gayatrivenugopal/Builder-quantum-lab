@@ -20,7 +20,7 @@ const Index = () => {
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
       image: classicStories,
       year: "2025",
-      category: "Translation",
+      category: "Harper Perennial India (An Imprint of HarperCollins India)",
     },
     {
       title: "Gandhi Alive",
@@ -28,7 +28,7 @@ const Index = () => {
         "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
       image: gandhiAlive,
       year: "2023",
-      category: "Translation",
+      category: "Mathrubhumi Books",
     },
 	{
       title: "The Story of the Timepiece",
@@ -36,7 +36,7 @@ const Index = () => {
         "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
       image: timepiece,
       year: "2019",
-      category: "Translation",
+      category: "Niyogi Books",
     }
   ];
 
