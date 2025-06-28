@@ -195,26 +195,24 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredWorks.map((work, index) => (
               <Card
-  key={index}
-  className="hover:shadow-xl transition-all duration-300 border-0 shadow-md cursor-pointer"
-  onClick={() =>
-    work.backImage
-      ? setFlippedIndex(flippedIndex === index ? null : index)
-      : null
-  }
->
-  {work.backImage ? (
-    <div className="relative aspect-[3/4] perspective">
-      <div
-        className={`flip-card-inner ${
-          flippedIndex === index ? "rotate-y-180" : ""
-        }`}
-      >
-        <img
-          src={work.image}
-          alt={work.title}
-          className="flip-card-front w-full h-full object-cover absolute backface-hidden rounded-t-lg"
-        />
+				  key={index}
+				  className="hover:shadow-xl transition-all duration-300 border-0 shadow-md cursor-pointer"
+				  onClick={() =>
+					work.backImage
+					  ? setFlippedIndex(flippedIndex === index ? null : index)
+					  : null
+				  }
+				>
+			  {work.backImage ? (
+				<div className="relative aspect-[3/4] perspective">
+				  <div
+					className={`flip-card-inner ${flippedIndex === index ? "rotate-y-180" : ""}`}
+				  >
+				<img
+				  src={work.image}
+				  alt={work.title}
+				  className={`flip-card-front w-full h-full object-cover absolute backface-hidden rounded-t-lg transition-transform duration-300 ${flippedIndex !== index ? "hover:scale-105" : ""}`}
+				/>
         <img
           src={work.backImage}
           alt={`${work.title} Back Cover`}
