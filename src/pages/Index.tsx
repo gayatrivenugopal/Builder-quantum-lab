@@ -20,7 +20,7 @@ const Index = () => {
 	{
       title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
-        "This antholofy includes stories spanning four decades, showcasing \
+        "This anthology includes stories spanning four decades, showcasing \
 		the evolving social landscape of Kerala, with themes like education, \
 		freedom, and women's emancipation.",
       image: classicStories,
