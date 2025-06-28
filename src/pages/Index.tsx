@@ -20,7 +20,9 @@ const Index = () => {
 	{
       title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
-        "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
+        "This antholofy includes stories spanning four decades, showcasing \
+		the evolving social landscape of Kerala, with themes like education, \
+		freedom, and women's emancipation.",
       image: classicStories,
 	  backImage: "",
 	  purchaseLink: "https://www.amazon.in/Marriage-Namboodiri-Classic-Malayalam-Stories/dp/9365698421",
@@ -40,7 +42,10 @@ const Index = () => {
 	{
       title: "The Story of the Timepiece",
       description:
-        "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
+        "A curated selection of short stories by S.K. Pottekkatt, a \
+		Jnanpith award-winning Malayalam author, that weaves \
+		through time, exploring the relationships between \
+		memory, history, and human connection.",
       image: timepiece,
 	  backImage: "",
 	  purchaseLink: "https://www.amazon.in/Story-Timepiece-Collection-Short-Stories/dp/9386906988/ref=tmm_hrd_swatch_0",
