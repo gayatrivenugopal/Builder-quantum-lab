@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -268,10 +269,11 @@ const Index = () => {
         <Button
 		  asChild
 		  size="sm"
-		  className="bg-author-accent hover:bg-author-primary text-white font-raleway uppercase tracking-wider px-4 py-2 mt-2"
+		  className="bg-author-accent hover:bg-author-primary text-white font-bold flex items-center gap-2 px-4 py-2 mt-2"
 		>
 		  <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
-			Buy Now <ArrowRight className="ml-2 h-4 w-4" />
+			<ShoppingCart className="h-4 w-4" />
+			Buy Now
 		  </a>
 		</Button>
       )}
