@@ -198,7 +198,7 @@ const Index = () => {
 				{featuredWorks.map((work, index) => (
   <Card
     key={index}
-    className="group border-0 shadow-md transition-transform"
+    className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md flex flex-col"
     onClick={() =>
       work.backImage
         ? setFlippedIndex(flippedIndex === index ? null : index)
@@ -238,7 +238,7 @@ const Index = () => {
       </div>
     </div>
 
-    <CardContent className="p-6">
+    <CardContent className="p-6 flex flex-col flex-1">
       <div className="flex justify-between items-center mb-3">
         <Badge
           variant="secondary"
@@ -257,29 +257,28 @@ const Index = () => {
         </span>
       </div>
 
-      <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
+      <h3 className="text-xl font-serif font-bold text-author-primary mb-3">
         {work.title}
       </h3>
 
-      <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
+      <p className="text-author-text-light leading-relaxed mb-4">
         {work.description}
       </p>
 
+	  <div className="mt-auto flex justify-center">
       {work.purchaseLink && (
-	  <div className="mt-4 flex justify-center">
-
         <Button
-		  asChild
-		  size="sm"
-		  className="bg-author-accent/80 hover:bg-author-accent/90 text-white font-semibold py-2 px-6 rounded shadow-md transition"
-		>
-		  <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
-			<ShoppingCart className="h-4 w-4" />
-			Buy Now
-		  </a>
-		</Button>
-		</div>
+          asChild
+          size="sm"
+          className="bg-author-accent/80 hover:bg-author-accent/90 text-white font-semibold py-2 px-6 rounded shadow-md transition flex items-center gap-2"
+        >
+          <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
+            <ShoppingCart className="h-4 w-4" />
+            Buy Now
+          </a>
+        </Button>
       )}
+		</div>
     </CardContent>
   </Card>
             ))}
