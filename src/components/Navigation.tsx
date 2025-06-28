@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,12 +20,14 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/works", label: "Works" },
-    { href: "/reviews", label: "Reviews" },
-    { href: "/articles", label: "Articles" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: "Home", isScroll: false },
+    { href: "/about", label: "About", isScroll: false },
+    { href: "#translations", label: "Translations", isScroll: true },
+	{ href: "#writings", label: "Writings", isScroll: true },
+    /*{ href: "/works", label: "Writings" },
+	{ href: "/reviews", label: "Writings" },
+    { href: "/articles", label: "Articles" },*/
+    { href: "/contact", label: "Contact", isScroll: false },
   ];
 
   return (
@@ -54,20 +57,37 @@ const Navigation = () => {
 
             {/* Left Navigation - Hidden on mobile */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navLinks.slice(0, 3).map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
-                    location.pathname === link.href
-                      ? "text-author-accent"
-                      : "text-author-primary hover:text-author-accent",
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.slice(0, 3).map((link) =>
+				  link.isScroll ? (
+					<ScrollLink
+					  key={link.href}
+					  to={link.href}
+					  smooth={true}
+					  duration={500}
+					  offset={-80}
+					  className={cn(
+						"text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+						"text-author-primary hover:text-author-accent"
+					  )}
+					>
+					  {link.label}
+					</ScrollLink>
+				  ) : (
+					<Link
+					  key={link.href}
+					  to={link.href}
+					  className={cn(
+						"text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
+						location.pathname === link.href
+						  ? "text-author-accent"
+						  : "text-author-primary hover:text-author-accent"
+					  )}
+					>
+					  {link.label}
+					</Link>
+				  )
+				)}
+
             </nav>
 
             {/* Logo */}
@@ -82,20 +102,37 @@ const Navigation = () => {
 
             {/* Right Navigation - Hidden on mobile */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navLinks.slice(3).map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
-                    location.pathname === link.href
-                      ? "text-author-accent"
-                      : "text-author-primary hover:text-author-accent",
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.slice(3).map((link) =>
+			  link.isScroll ? (
+				<ScrollLink
+				  key={link.href}
+				  to={link.href}
+				  smooth={true}
+				  duration={500}
+				  offset={-80}
+				  className={cn(
+					"text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+					"text-author-primary hover:text-author-accent"
+				  )}
+				>
+				  {link.label}
+				</ScrollLink>
+			  ) : (
+				<Link
+				  key={link.href}
+				  to={link.href}
+				  className={cn(
+					"text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
+					location.pathname === link.href
+					  ? "text-author-accent"
+					  : "text-author-primary hover:text-author-accent"
+				  )}
+				>
+				  {link.label}
+				</Link>
+			  )
+			)}
+
             </nav>
 
             {/* Mobile menu button */}
@@ -116,21 +153,39 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={cn(
-                    "block text-sm font-raleway font-medium uppercase tracking-widest transition-colors",
-                    location.pathname === link.href
-                      ? "text-author-accent"
-                      : "text-author-primary hover:text-author-accent",
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+				  link.isScroll ? (
+					<ScrollLink
+					  key={link.href}
+					  to={link.href}
+					  smooth={true}
+					  duration={500}
+					  offset={-80}
+					  className={cn(
+						"block text-sm font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+						"text-author-primary hover:text-author-accent"
+					  )}
+					  onClick={() => setIsMobileMenuOpen(false)}
+					>
+					  {link.label}
+					</ScrollLink>
+				  ) : (
+					<Link
+					  key={link.href}
+					  to={link.href}
+					  className={cn(
+						"block text-sm font-raleway font-medium uppercase tracking-widest transition-colors",
+						location.pathname === link.href
+						  ? "text-author-accent"
+						  : "text-author-primary hover:text-author-accent"
+					  )}
+					  onClick={() => setIsMobileMenuOpen(false)}
+					>
+					  {link.label}
+					</Link>
+				  )
+				)}
+
               <div className="pt-4">
                 <Button
                   asChild

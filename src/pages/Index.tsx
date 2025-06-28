@@ -186,7 +186,7 @@ const Index = () => {
       </section>
 
       {/* Featured Works Section */}
-      <section className="py-20 bg-white">
+      <section id="translations" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-author-primary mb-6 uppercase tracking-wider">
@@ -368,7 +368,7 @@ const Index = () => {
       </section>
 
       {/* Recent Press Coverage */}
-      <section className="py-20 bg-white">
+      <section id="writings" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-author-primary mb-6 uppercase tracking-wider">
