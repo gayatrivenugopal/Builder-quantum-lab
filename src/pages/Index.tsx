@@ -193,80 +193,90 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredWorks.map((work, index) => (
-              <Card
-				  key={index}
-				  className="hover:shadow-xl transition-all duration-300 border-0 shadow-md cursor-pointer"
-				  onClick={() =>
-					work.backImage
-					  ? setFlippedIndex(flippedIndex === index ? null : index)
-					  : null
-				  }
-				>
-			  {work.backImage ? (
-				<div className="relative aspect-[3/4] perspective">
-				  <div
-					className={`flip-card-inner ${flippedIndex === index ? "rotate-y-180" : ""}`}
-				  >
-				<img
-				  src={work.image}
-				  alt={work.title}
-				  className={`flip-card-front w-full h-full object-cover absolute backface-hidden rounded-t-lg transition-transform duration-300 ${flippedIndex !== index ? "hover:scale-105" : ""}`}
-				/>
-        <img
-          src={work.backImage}
-          alt={`${work.title} Back Cover`}
-          className="flip-card-back w-full h-full object-cover absolute backface-hidden rotate-y-180 rounded-t-lg"
-        />
+            
+				{featuredWorks.map((work, index) => (
+  <Card
+    key={index}
+    className="group border-0 shadow-md transition-transform"
+    onClick={() =>
+      work.backImage
+        ? setFlippedIndex(flippedIndex === index ? null : index)
+        : null
+    }
+    style={{ cursor: work.backImage ? "pointer" : "default" }}
+  >
+    <div className="relative aspect-[3/4] overflow-hidden rounded-t-lg">
+      <div
+        className={`w-full h-full transition-transform duration-700 transform-style-3d ${
+          flippedIndex === index ? "rotate-y-180" : ""
+        }`}
+      >
+        {/* FRONT */}
+        <div className="absolute w-full h-full backface-hidden">
+          <img
+            src={work.image}
+            alt={work.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+
+        {/* BACK */}
+        <div className="absolute w-full h-full rotate-y-180 backface-hidden">
+          {work.backImage ? (
+            <img
+              src={work.backImage}
+              alt={`${work.title} Back Cover`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-500">
+              No Back Cover
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  ) : (
-    <div className="aspect-[3/4] bg-gradient-to-br from-elegant-cream to-elegant-warm-gray rounded-t-lg overflow-hidden">
-      <img
-        src={work.image}
-        alt={work.title}
-        className="w-full h-full object-cover transition-transform duration-300"
-      />
-    </div>
-  )}
 
-  <CardContent className="p-6">
-    <div className="flex justify-between items-center mb-3">
-      <Badge
-        variant="secondary"
-        className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
-      >
-        <div className="text-center">
-          {Array.isArray(work.category)
-            ? work.category.map((line, i) => <div key={i}>{line}</div>)
-            : work.category}
-        </div>
-      </Badge>
-      <span className="text-sm text-author-text-light text-right font-bold">
-        {work.year}
-      </span>
-    </div>
+    <CardContent className="p-6">
+      <div className="flex justify-between items-center mb-3">
+        <Badge
+          variant="secondary"
+          className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
+        >
+          <div className="text-center">
+            {Array.isArray(work.category)
+              ? work.category.map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))
+              : work.category}
+          </div>
+        </Badge>
+        <span className="text-sm text-author-text-light text-right font-bold">
+          {work.year}
+        </span>
+      </div>
 
-    <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
-      {work.title}
-    </h3>
+      <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
+        {work.title}
+      </h3>
 
-    <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
-      {work.description}
-    </p>
+      <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
+        {work.description}
+      </p>
 
-    <Button
-      asChild
-      variant="ghost"
-      className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
-    >
-      <Link to="/works">
-        Read More <ArrowRight className="ml-2 h-4 w-4" />
-      </Link>
-    </Button>
-  </CardContent>
-</Card>
-
+      {work.purchaseLink && (
+        <Button
+          asChild
+          variant="ghost"
+          className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
+        >
+          <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
+            Buy Now <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+        </Button>
+      )}
+    </CardContent>
+  </Card>
             ))}
           </div>
 
