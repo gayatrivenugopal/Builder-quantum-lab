@@ -196,12 +196,20 @@ const Index = () => {
             {featuredWorks.map((work, index) => (
               <Card
   key={index}
-  className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md"
+  className="hover:shadow-xl transition-all duration-300 border-0 shadow-md cursor-pointer"
+  onClick={() =>
+    work.backImage
+      ? setFlippedIndex(flippedIndex === index ? null : index)
+      : null
+  }
 >
   {work.backImage ? (
-    // Flipping card if backImage exists
     <div className="relative aspect-[3/4] perspective">
-      <div className="flip-card-inner group-hover:rotate-y-180">
+      <div
+        className={`flip-card-inner ${
+          flippedIndex === index ? "rotate-y-180" : ""
+        }`}
+      >
         <img
           src={work.image}
           alt={work.title}
@@ -215,12 +223,11 @@ const Index = () => {
       </div>
     </div>
   ) : (
-    // Static image if no backImage
     <div className="aspect-[3/4] bg-gradient-to-br from-elegant-cream to-elegant-warm-gray rounded-t-lg overflow-hidden">
       <img
         src={work.image}
         alt={work.title}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-cover transition-transform duration-300"
       />
     </div>
   )}
