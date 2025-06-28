@@ -266,14 +266,14 @@ const Index = () => {
 
       {work.purchaseLink && (
         <Button
-          asChild
-          variant="ghost"
-          className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
-        >
-          <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
-            Buy Now <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
-        </Button>
+		  asChild
+		  size="sm"
+		  className="bg-author-accent hover:bg-author-primary text-white font-raleway uppercase tracking-wider px-4 py-2 mt-2"
+		>
+		  <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
+			Buy Now <ArrowRight className="ml-2 h-4 w-4" />
+		  </a>
+		</Button>
       )}
     </CardContent>
   </Card>
