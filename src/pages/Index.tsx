@@ -23,7 +23,8 @@ const Index = () => {
       image: classicStories,
 	  backImage: "",
 	  purchaseLink: "https://www.amazon.in/Marriage-Namboodiri-Classic-Malayalam-Stories/dp/9365698421",
-      category: ["Harper Perennial India", "An Imprint of HarperCollins India"],
+      year: "2025",
+	  category: ["Harper Perennial India", "An Imprint of HarperCollins India"],
     },
     {
       title: "Gandhi Alive",
@@ -31,7 +32,7 @@ const Index = () => {
         "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
       image: gandhiAlive,
 	  backImage: gandhiAliveMalayalam,
-	  buyLink: "https://www.amazon.in/GANDHI-ALIVE-KARASSERY-M-N/dp/9355494807",
+	  purchaseLink: "https://www.amazon.in/GANDHI-ALIVE-KARASSERY-M-N/dp/9355494807",
       year: "2023",
       category: "Mathrubhumi Books",
     },
@@ -41,7 +42,7 @@ const Index = () => {
         "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
       image: timepiece,
 	  backImage: "",
-	  buyLink: "https://www.amazon.in/Story-Timepiece-Collection-Short-Stories/dp/9386906988/ref=tmm_hrd_swatch_0",
+	  purchaseLink: "https://www.amazon.in/Story-Timepiece-Collection-Short-Stories/dp/9386906988/ref=tmm_hrd_swatch_0",
       year: "2019",
       category: "Niyogi Books",
     }
