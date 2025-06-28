@@ -269,7 +269,7 @@ const Index = () => {
         <Button
 		  asChild
 		  size="sm"
-		  className="bg-author-accent hover:bg-author-primary text-white font-bold flex items-center gap-2 px-4 py-2 mt-2"
+		  className="bg-author-accent/80 hover:bg-author-accent/90 text-white font-semibold py-2 px-6 rounded shadow-md transition"
 		>
 		  <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
 			<ShoppingCart className="h-4 w-4" />
