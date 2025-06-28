@@ -2,23 +2,27 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import classicStories from './images/classic-malayalam-stories.jpg';
 import timepiece from './images/the-story-of-the-timepiece.jpg';
 import gandhiAlive from './images/gandhi-alive.jpg';
+import gandhiAliveMalayalam from './images/gandhi-alive-malayalam.jpg';
 import profile from './images/venugopal-menon.jpg';
-
 
 import { BookOpen, Award, Quote, ArrowRight, Star } from "lucide-react";
 
 const Index = () => {
+  const [flippedIndex, setFlippedIndex] = useState(null);
   const featuredWorks = [
 	{
       title: "The Second Marriage of Kunju Namboodiri & Other Classic Malayalam Stories",
       description:
         "A profound exploration of tradition and modernity in Kerala society, masterfully translated to capture the nuances of cultural transformation.",
       image: classicStories,
+	  backImage: "",
+	  buyLink: "https://www.amazon.in/Second-Marriage-Kunju-Namboodiri-Classics/dp/9356997842",
       year: "2025",
       category: ["Harper Perennial India", "An Imprint of HarperCollins India"],
     },
@@ -27,6 +31,8 @@ const Index = () => {
       description:
         "A collection of memoirs based on interviews with Venkataram Kalyanam, a secretary of Mahatma Gandhi, focusing on the final years of Gandhi's life.",
       image: gandhiAlive,
+	  backImage: gandhiAliveMalayalam,
+	  buyLink: "https://www.amazon.in/Second-Marriage-Kunju-Namboodiri-Classics/dp/9356997842",
       year: "2023",
       category: "Mathrubhumi Books",
     },
@@ -35,6 +41,8 @@ const Index = () => {
       description:
         "An intricate narrative that weaves through time, exploring the relationships between memory, history, and human connection.",
       image: timepiece,
+	  backImage: "",
+	  buyLink: "https://www.amazon.in/Second-Marriage-Kunju-Namboodiri-Classics/dp/9356997842",
       year: "2019",
       category: "Niyogi Books",
     }
@@ -187,54 +195,73 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredWorks.map((work, index) => (
               <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md"
-              >
-                <div className="aspect-[3/4] bg-gradient-to-br from-elegant-cream to-elegant-warm-gray rounded-t-lg overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <Badge
-					  variant="secondary"
-					  className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
-					>
-					  <div className="text-center">
-						{Array.isArray(work.category)
-						  ? work.category.map((line, i) => (
-							  <div key={i}>{line}</div>
-							))
-						  : work.category}
-					  </div>
-                    </Badge>
-                    <span className="text-sm text-author-text-light text-right font-bold">
-                      {work.year}
-                    </span>
-                  </div>
+  key={index}
+  className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md"
+>
+  {work.backImage ? (
+    // Flipping card if backImage exists
+    <div className="relative aspect-[3/4] perspective">
+      <div className="flip-card-inner group-hover:rotate-y-180">
+        <img
+          src={work.image}
+          alt={work.title}
+          className="flip-card-front w-full h-full object-cover absolute backface-hidden rounded-t-lg"
+        />
+        <img
+          src={work.backImage}
+          alt={`${work.title} Back Cover`}
+          className="flip-card-back w-full h-full object-cover absolute backface-hidden rotate-y-180 rounded-t-lg"
+        />
+      </div>
+    </div>
+  ) : (
+    // Static image if no backImage
+    <div className="aspect-[3/4] bg-gradient-to-br from-elegant-cream to-elegant-warm-gray rounded-t-lg overflow-hidden">
+      <img
+        src={work.image}
+        alt={work.title}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+    </div>
+  )}
 
-                  <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
-                    {work.title}
-                  </h3>
+  <CardContent className="p-6">
+    <div className="flex justify-between items-center mb-3">
+      <Badge
+        variant="secondary"
+        className="bg-author-accent/10 text-author-accent border-author-accent/20 leading-snug py-2"
+      >
+        <div className="text-center">
+          {Array.isArray(work.category)
+            ? work.category.map((line, i) => <div key={i}>{line}</div>)
+            : work.category}
+        </div>
+      </Badge>
+      <span className="text-sm text-author-text-light text-right font-bold">
+        {work.year}
+      </span>
+    </div>
 
-                  <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
-                    {work.description}
-                  </p>
+    <h3 className="text-xl font-serif font-bold text-author-primary mb-3 line-clamp-2">
+      {work.title}
+    </h3>
 
-                  <Button
-                    asChild
-                    variant="ghost"
-                    className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
-                  >
-                    <Link to="/works">
-                      Read More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+    <p className="text-author-text-light leading-relaxed mb-4 line-clamp-3">
+      {work.description}
+    </p>
+
+    <Button
+      asChild
+      variant="ghost"
+      className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
+    >
+      <Link to="/works">
+        Read More <ArrowRight className="ml-2 h-4 w-4" />
+      </Link>
+    </Button>
+  </CardContent>
+</Card>
+
             ))}
           </div>
 
