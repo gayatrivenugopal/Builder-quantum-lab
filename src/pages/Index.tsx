@@ -266,17 +266,19 @@ const Index = () => {
       </p>
 
       {work.purchaseLink && (
-        <div className="mt-4 flex justify-center">
-  <a
-    href={work.purchaseLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-author-accent/80 hover:bg-author-accent text-white font-semibold py-2 px-6 rounded shadow-md transition"
-  >
-    Buy Now
-  </a>
-</div>
+	  <div className="mt-4 flex justify-center">
 
+        <Button
+		  asChild
+		  size="sm"
+		  className="bg-author-accent/80 hover:bg-author-accent/90 text-white font-semibold py-2 px-6 rounded shadow-md transition"
+		>
+		  <a href={work.purchaseLink} target="_blank" rel="noopener noreferrer">
+			<ShoppingCart className="h-4 w-4" />
+			Buy Now
+		  </a>
+		</Button>
+		</div>
       )}
     </CardContent>
   </Card>
