@@ -288,7 +288,7 @@ const Index = () => {
   </Card>
             ))}
           </div>
-
+		{/*
           <div className="text-center mt-12">
             <Button
               asChild
@@ -298,7 +298,7 @@ const Index = () => {
             >
               <Link to="/works">View All Works</Link>
             </Button>
-          </div>
+          </div>*/}
         </div>
       </section>
 
