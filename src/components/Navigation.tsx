@@ -1,44 +1,60 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { Link as ScrollLink } from 'react-scroll';
+import { scroller } from "react-scroll";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleScrollLinkClick = (sectionId) => {
+    setIsMobileMenuOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        scroller.scrollTo(sectionId, {
+          smooth: true,
+          duration: 600,
+          offset: -80,
+        });
+      }, 300);
+    } else {
+      scroller.scrollTo(sectionId, {
+        smooth: true,
+        duration: 600,
+        offset: -80,
+      });
+    }
+  };
+
   const navLinks = [
     { href: "/", label: "Home", isScroll: false },
     { href: "/about", label: "About", isScroll: false },
-    { href: "#translations", label: "Translations", isScroll: true },
-	{ href: "#writings", label: "Writings", isScroll: true },
-    /*{ href: "/works", label: "Writings" },
-	{ href: "/reviews", label: "Writings" },
-    { href: "/articles", label: "Articles" },*/
+    { href: "translations", label: "Translations", isScroll: true },
+    { href: "writings", label: "Articles", isScroll: true },
     { href: "/contact", label: "Contact", isScroll: false },
   ];
 
   return (
     <>
-      {/* Main Header */}
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
             ? "bg-white/95 backdrop-blur-sm shadow-md h-16"
-            : "bg-white h-20",
+            : "bg-white h-20"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 h-full">
@@ -55,39 +71,35 @@ const Navigation = () => {
               </Button>
             </div>
 
-            {/* Left Navigation - Hidden on mobile */}
+            {/* Left Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navLinks.slice(0, 3).map((link) =>
-				  link.isScroll ? (
-					<ScrollLink
-					  key={link.href}
-					  to={link.href}
-					  smooth={true}
-					  duration={500}
-					  offset={-80}
-					  className={cn(
-						"text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
-						"text-author-primary hover:text-author-accent"
-					  )}
-					>
-					  {link.label}
-					</ScrollLink>
-				  ) : (
-					<Link
-					  key={link.href}
-					  to={link.href}
-					  className={cn(
-						"text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
-						location.pathname === link.href
-						  ? "text-author-accent"
-						  : "text-author-primary hover:text-author-accent"
-					  )}
-					>
-					  {link.label}
-					</Link>
-				  )
-				)}
-
+                link.isScroll ? (
+                  <span
+                    key={link.href}
+                    onClick={() => handleScrollLinkClick(link.href)}
+                    className={cn(
+                      "text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+                      "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </span>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={cn(
+                      "text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
+                      location.pathname === link.href
+                        ? "text-author-accent"
+                        : "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </nav>
 
             {/* Logo */}
@@ -100,39 +112,35 @@ const Navigation = () => {
               </Link>
             </div>
 
-            {/* Right Navigation - Hidden on mobile */}
+            {/* Right Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navLinks.slice(3).map((link) =>
-			  link.isScroll ? (
-				<ScrollLink
-				  key={link.href}
-				  to={link.href}
-				  smooth={true}
-				  duration={500}
-				  offset={-80}
-				  className={cn(
-					"text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
-					"text-author-primary hover:text-author-accent"
-				  )}
-				>
-				  {link.label}
-				</ScrollLink>
-			  ) : (
-				<Link
-				  key={link.href}
-				  to={link.href}
-				  className={cn(
-					"text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
-					location.pathname === link.href
-					  ? "text-author-accent"
-					  : "text-author-primary hover:text-author-accent"
-				  )}
-				>
-				  {link.label}
-				</Link>
-			  )
-			)}
-
+                link.isScroll ? (
+                  <span
+                    key={link.href}
+                    onClick={() => handleScrollLinkClick(link.href)}
+                    className={cn(
+                      "text-xs font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+                      "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </span>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={cn(
+                      "text-xs font-raleway font-medium uppercase tracking-widest transition-colors",
+                      location.pathname === link.href
+                        ? "text-author-accent"
+                        : "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </nav>
 
             {/* Mobile menu button */}
@@ -154,37 +162,33 @@ const Navigation = () => {
           <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) =>
-				  link.isScroll ? (
-					<ScrollLink
-					  key={link.href}
-					  to={link.href}
-					  smooth={true}
-					  duration={500}
-					  offset={-80}
-					  className={cn(
-						"block text-sm font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
-						"text-author-primary hover:text-author-accent"
-					  )}
-					  onClick={() => setIsMobileMenuOpen(false)}
-					>
-					  {link.label}
-					</ScrollLink>
-				  ) : (
-					<Link
-					  key={link.href}
-					  to={link.href}
-					  className={cn(
-						"block text-sm font-raleway font-medium uppercase tracking-widest transition-colors",
-						location.pathname === link.href
-						  ? "text-author-accent"
-						  : "text-author-primary hover:text-author-accent"
-					  )}
-					  onClick={() => setIsMobileMenuOpen(false)}
-					>
-					  {link.label}
-					</Link>
-				  )
-				)}
+                link.isScroll ? (
+                  <span
+                    key={link.href}
+                    onClick={() => handleScrollLinkClick(link.href)}
+                    className={cn(
+                      "block text-sm font-raleway font-medium uppercase tracking-widest transition-colors cursor-pointer",
+                      "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </span>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "block text-sm font-raleway font-medium uppercase tracking-widest transition-colors",
+                      location.pathname === link.href
+                        ? "text-author-accent"
+                        : "text-author-primary hover:text-author-accent"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
 
               <div className="pt-4">
                 <Button
@@ -205,7 +209,7 @@ const Navigation = () => {
         )}
       </header>
 
-      {/* Spacer to prevent content from hiding behind fixed header */}
+      {/* Spacer */}
       <div className={isScrolled ? "h-16" : "h-20"} />
     </>
   );
