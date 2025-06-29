@@ -387,38 +387,40 @@ const Index = () => {
                 key={index}
                 className="border-0 shadow-md hover:shadow-lg transition-shadow"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    <BookOpen className="h-5 w-5 text-author-accent" />
-                    <span className="text-sm font-raleway font-medium text-author-accent uppercase tracking-wider">
-                      {article.publication}
-                    </span>
-                  </div>
+                <CardContent className="p-8 flex flex-col h-full">
+				  {/* Top Content */}
+				  <div className="mb-4">
+					<div className="flex items-center gap-2 mb-4">
+					  <BookOpen className="h-5 w-5 text-author-accent" />
+					  <span className="text-sm font-raleway font-medium text-author-accent uppercase tracking-wider">
+						{article.publication}
+					  </span>
+					</div>
 
-                  <h3 className="text-xl font-serif font-bold text-author-primary mb-3 leading-tight">
-                    {article.title}
-                  </h3>
+					<h3 className="text-xl font-serif font-bold text-author-primary mb-3 leading-tight">
+					  {article.title}
+					</h3>
 
-                  <p className="text-author-text-light mb-4 leading-relaxed">
-                    {article.excerpt}
-                  </p>
+					<p className="text-author-text-light leading-relaxed">
+					  {article.excerpt}
+					</p>
+				  </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-author-text-light">
-                      {article.date}
-                    </span>
-                    <Button
-                      asChild
-                      variant="ghost"
-                      size="sm"
-                      className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
-                    >
-                      <Link to={article.link}>
-                        Read Article <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
+				  {/* Footer pinned to bottom */}
+				  <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-100">
+					<span className="text-sm text-author-text-light">{article.date}</span>
+					<Button
+					  asChild
+					  variant="ghost"
+					  size="sm"
+					  className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
+					>
+					  <Link to={article.link}>
+						Read Article <ArrowRight className="ml-2 h-4 w-4" />
+					  </Link>
+					</Button>
+				  </div>
+				</CardContent>
               </Card>
             ))}
           </div>
