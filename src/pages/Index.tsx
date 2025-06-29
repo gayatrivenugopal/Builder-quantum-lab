@@ -157,7 +157,7 @@ const Index = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-author-text-light mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-author-text-light mb-2 leading-relaxed max-w-3xl mx-auto">
               Renowned translator and writer bringing the richness of Malayalam
               literature to global audiences with sensitivity and artistic
               excellence.
