@@ -408,7 +408,7 @@ const Index = () => {
 
 				  {/* Footer pinned to bottom */}
 				  <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-100">
-					<span className="text-sm text-author-text-light">{article.date}</span>
+					<span className="font-bold text-sm text-author-text-light">{article.date}</span>
 					<Button
 					  asChild
 					  variant="ghost"
