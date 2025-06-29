@@ -127,7 +127,7 @@ const Index = () => {
       date: "November 2020",
 	  link: "https://www.thehindu.com/opinion/open-page/mans-best-friend/article32990051.ece",
       excerpt:
-        "Remembering how a dog was lost and found in two years and his tragic end later",
+        "Remembering how a dog was lost and found in two years and his tragic end later.",
     },
     {
       title:
@@ -413,7 +413,7 @@ const Index = () => {
                       size="sm"
                       className="text-author-accent hover:text-author-primary font-raleway uppercase tracking-wider p-0"
                     >
-                      <Link to="/articles">
+                      <Link to={article.link}>
                         Read Article <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
