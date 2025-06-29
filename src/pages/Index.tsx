@@ -162,7 +162,7 @@ const Index = () => {
               literature to global audiences with sensitivity and artistic
               excellence.
             </p>
-
+			{/*
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 asChild
@@ -182,7 +182,7 @@ const Index = () => {
               >
                 <Link to="/contact">Send Email</Link>
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
