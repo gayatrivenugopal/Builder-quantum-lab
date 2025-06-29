@@ -127,7 +127,7 @@ const Index = () => {
       date: "November 2020",
 	  link: "https://www.thehindu.com/opinion/open-page/mans-best-friend/article32990051.ece",
       excerpt:
-        "Remembering how a dog was lost and found in two years and his tragic end later.",
+        "Remembering how a dog was lost and found in two years and his tragic end later.<br>",
     },
     {
       title:
